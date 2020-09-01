@@ -296,8 +296,6 @@ def main():
         '3': action3,
         '4': action4,
         '5': action5,
-        '6': action6,
-        '7': test,
     }
     print_menu()
     while True:
