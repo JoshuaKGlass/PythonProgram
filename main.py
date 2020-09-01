@@ -280,7 +280,6 @@ def print_menu():
         '3: Python Program to a Decimal number into Bin, Oct and Hex\n'
         '4: Python Program to Find Factorial of Number Using Recursion\n'
         '5: Python Program to hash encrypt a file\n'
-        '6: Python Program to convert string to utf8\n'
     )
 
 
