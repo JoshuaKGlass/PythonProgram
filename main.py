@@ -31,17 +31,17 @@ def delay_print(s):
         else:
             time.sleep(0.01)
 
-
+# print the main menu
 def action0():
     print_menu()
 
-
+# convert km to miles
 def action1():
     kilo = float(raw_input('enter number of kilometer to convert into miles: '))
 
     kilo_to_mile(kilo)
 
-
+# method that converts km to miles
 def kilo_to_mile(input_kilo):
     # conversion ratios kilo to miles
     conv_fac = 0.621371
@@ -51,7 +51,7 @@ def kilo_to_mile(input_kilo):
 
     return print('%0.2f Kilometers is equal to %0.2f Miles' % (input_kilo, miles))
 
-
+# check if year is a leap year
 def action2():
     year = int(raw_input('Python Program to Check Leap Year: '))
     check_leap(year)
@@ -69,7 +69,7 @@ def check_leap(year):
     else:
         return print("{0} is not a leap year\n".format(year))
 
-
+# convert decmial number into different number systems
 def action3():
     number = int(raw_input('Python Program to a Decimal number into Bin, Oct and Hex: '))
     dec_conv(number)
@@ -81,7 +81,7 @@ def dec_conv(dec):
     print(oct(dec), "in octal.")
     print(hex(dec), "in hexadecimal.\n")
 
-
+# print the factorial of a number
 def action4():
     num = int(raw_input('enter a positive number: '))
 
@@ -102,7 +102,7 @@ def recur_factorial(n):
     else:
         return n * recur_factorial(n - 1)
 
-
+# encryption method, created by Joshua G
 def action5():
     while True:
         # asking for user to enter two prime numbers, p q
@@ -123,7 +123,7 @@ def action5():
         if is_prime(t + 1) == 1:  # if true cycle again because it is a prime
             i += 1
 
-        else:  # save doubled value of r into temp check to make sure then save r as temp
+        else:
             is_prime(t + 1)
             e, d = factors(t + 1)
 
@@ -147,6 +147,7 @@ def action5():
     # print('Your decrypted number is: ', demsg)
 
     s = raw_input('enter your message here: ')
+    # start encryption
     action6(s, e, d, n)
 
 
@@ -224,16 +225,17 @@ def is_prime(n):
 
 def action6(s, e, d, n):
     # s = raw_input('enter your message here: ')
+    # convert char into utf8 integers
     stn = string_to_utf8(s)
     print('\nthis is your message in utf8: \n', stn, '\n')  # change to num
 
-    print('this is your message encrypted: ')  # encrypt
+    print('this is your message encrypted: ')  # encrypt the integers with encryption method
     b = []
     for i in stn:
         b.append(encrypt(i, e, n))
     print(b, '\n')
 
-    print('this is your message decrypted: ')  # decrypt
+    print('this is your message decrypted: ')  # decrypt the encrypted integers with decryption method
     g = []
     for i in b:
         g.append(decrypt(i, d, n))
@@ -242,7 +244,7 @@ def action6(s, e, d, n):
     nts = utf8_to_string(g)  # change to char
     print('this is your message in ASCII: ', ''.join(nts))
 
-
+# convert char into int
 def string_to_utf8(s):
     word = split(s)
     numb = []
@@ -252,7 +254,7 @@ def string_to_utf8(s):
         numb.append(msg)
     return numb
 
-
+# convert int back into char
 def utf8_to_string(s):
     number = s  # list(map(int, s.split(' ')))
     string = []
@@ -262,7 +264,7 @@ def utf8_to_string(s):
         string.append(msg)
     return string
 
-
+# split a string into char
 def split(word):
     return list(word)
 
@@ -282,7 +284,7 @@ def print_menu():
         '5: Python Program to hash encrypt a file\n'
     )
 
-
+# test to see if factors method can handle 16-bit and higher values
 def test():
     print(factors(16667202255280345128))
 
